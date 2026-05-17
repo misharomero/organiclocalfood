@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finca Familiar — El Salvador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-sv.css">
+</head>
+<body class="lang-es">
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-maiz">🌽</span>
+      <span>Finca Familiar</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active" data-es="Inicio" data-en="Home">Inicio</a>
+      <a href="diario.html" data-es="Diario" data-en="Journal">Diario</a>
+      <a href="finca.html" data-es="La Finca" data-en="The Farm">La Finca</a>
+      <a href="puyallup.html" data-es="Puyallup" data-en="Puyallup">Puyallup</a>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()">
+      <span class="lang-es-label">ES → EN</span>
+      <span class="lang-en-label">EN → ES</span>
+    </button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <p class="hero-lugar">
+        <span data-es="El Salvador · América Central" data-en="El Salvador · Central America">El Salvador · América Central</span>
+      </p>
+      <h1>
+        <span class="h1-es">La tierra<br><em>que nos dio</em><br>la vida</span>
+        <span class="h1-en">The land<br><em>that gave us</em><br>life</span>
+      </h1>
+      <p class="hero-sub" data-es="Finca familiar · Generaciones de sabiduría · Corazón tropical" data-en="Family farm · Generations of wisdom · Tropical heart">
+        Finca familiar · Generaciones de sabiduría · Corazón tropical
+      </p>
+      <div class="hero-icons">
+        <span>🌽</span><span>☀️</span><span>🌺</span><span>🥭</span><span>🎶</span>
+      </div>
+      <a href="diario.html" class="hero-cta">
+        <span data-es="Ver el Diario →" data-en="See the Journal →">Ver el Diario →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="vida">
+    <div class="vida-inner">
+      <div class="vida-text">
+        <span class="section-tag" data-es="La Finca / The Farm" data-en="The Farm / La Finca">La Finca / The Farm</span>
+        <h2>
+          <span data-es="Tierra que alimenta.<br>Familia que cuida.<br>Tradición que vive." data-en="Land that feeds.<br>Family that cares.<br>Tradition that lives.">Tierra que alimenta.<br>Familia que cuida.<br>Tradición que vive.</span>
+        </h2>
+        <p data-es="En El Salvador, nuestra finca familiar ha alimentado a nuestra familia por generaciones. Clima tropical, tierra fértil, y el conocimiento que se pasa de abuelos a padres a hijos — esto es patrimonio vivo." data-en="In El Salvador, our family farm has fed our family for generations. Tropical climate, rich soil, and knowledge passed from grandparents to parents to children — this is living heritage.">
+          En El Salvador, nuestra finca familiar ha alimentado a nuestra familia por generaciones. Clima tropical, tierra fértil, y el conocimiento que se pasa de abuelos a padres a hijos — esto es patrimonio vivo.
+        </p>
+        <p data-es="Maíz, frijoles, frutas tropicales, y todo lo que da la tierra salvadoreña. Y siempre, siempre con música." data-en="Corn, beans, tropical fruits, and everything the Salvadoran land gives. And always, always with music.">
+          Maíz, frijoles, frutas tropicales, y todo lo que da la tierra salvadoreña. Y siempre, siempre con música.
+        </p>
+      </div>
+      <div class="vida-cards">
+        <div class="finca-card calor">
+          <div class="finca-card-icon">☀️</div>
+          <h3 data-es="Clima Tropical" data-en="Tropical Climate">Clima Tropical</h3>
+          <p data-es="Sol todo el año. Lluvias que dan vida. La tierra nunca descansa." data-en="Sun all year. Life-giving rains. The land never rests.">Sol todo el año. Lluvias que dan vida. La tierra nunca descansa.</p>
+        </div>
+        <div class="finca-card raices">
+          <div class="finca-card-icon">🌽</div>
+          <h3 data-es="Raíces Profundas" data-en="Deep Roots">Raíces Profundas</h3>
+          <p data-es="El maíz que sembraron nuestros abuelos. Los frijoles de siempre. La milpa que nunca falla." data-en="The corn our grandparents planted. The same beans as always. The milpa that never fails.">El maíz que sembraron nuestros abuelos. Los frijoles de siempre. La milpa que nunca falla.</p>
+        </div>
+        <div class="finca-card alegria">
+          <div class="finca-card-icon">🎶</div>
+          <h3 data-es="Con Alegría" data-en="With Joy">Con Alegría</h3>
+          <p data-es="En El Salvador se trabaja con música. La cumbia, la pupusa, la familia — eso es lo que hace crecer la tierra." data-en="In El Salvador we work with music. Cumbia, pupusas, family — that's what makes the land grow.">En El Salvador se trabaja con música. La cumbia, la pupusa, la familia — eso es lo que hace crecer la tierra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cultivos">
+    <div class="cultivos-inner">
+      <span class="section-tag" data-es="Lo que crece aquí" data-en="What grows here">Lo que crece aquí</span>
+      <h2 data-es="Los cultivos de la finca" data-en="The farm's crops">Los cultivos de la finca</h2>
+      <div class="cultivos-grid">
+        <div class="cultivo-item">
+          <span class="cultivo-icon">🌽</span>
+          <span class="cultivo-name" data-es="Maíz" data-en="Corn">Maíz</span>
+        </div>
+        <div class="cultivo-item">
+          <span class="cultivo-icon">🫘</span>
+          <span class="cultivo-name" data-es="Frijoles" data-en="Beans">Frijoles</span>
+        </div>
+        <div class="cultivo-item">
+          <span class="cultivo-icon">🥭</span>
+          <span class="cultivo-name" data-es="Mango" data-en="Mango">Mango</span>
+        </div>
+        <div class="cultivo-item">
+          <span class="cultivo-icon">🍌</span>
+          <span class="cultivo-name" data-es="Plátano" data-en="Plantain">Plátano</span>
+        </div>
+        <div class="cultivo-item">
+          <span class="cultivo-icon">🍋</span>
+          <span class="cultivo-name" data-es="Limón" data-en="Lime">Limón</span>
+        </div>
+        <div class="cultivo-item">
+          <span class="cultivo-icon">🌿</span>
+          <span class="cultivo-name" data-es="Hierbas" data-en="Herbs">Hierbas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="conexion">
+    <div class="conexion-inner">
+      <span class="section-tag" data-es="Dos lugares, una familia" data-en="Two places, one family">Dos lugares, una familia</span>
+      <p data-es="Mientras la finca en El Salvador crece bajo el sol tropical, nuestro jardín en Puyallup, Washington aprende a crecer bajo la sombra de Tahoma. Dos culturas, dos climas, una familia." data-en="While the El Salvador farm grows under the tropical sun, our garden in Puyallup, Washington learns to grow under Tahoma's shadow. Two cultures, two climates, one family.">
+        Mientras la finca en El Salvador crece bajo el sol tropical, nuestro jardín en Puyallup, Washington aprende a crecer bajo la sombra de Tahoma. Dos culturas, dos climas, una familia.
+      </p>
+      <a href="puyallup.html" class="conexion-link" data-es="Ver el jardín en Puyallup →" data-en="Visit the Puyallup garden →">Ver el jardín en Puyallup →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-nombre">Finca Familiar · El Salvador</p>
+      <p class="footer-lugar" data-es="El Salvador · América Central" data-en="El Salvador · Central America">El Salvador · América Central</p>
+      <div class="footer-icons">🌽 ☀️ 🌺 🎶</div>
+      <p class="footer-frase" data-es="La tierra da, la familia recibe, la tradición vive." data-en="The land gives, the family receives, the tradition lives.">La tierra da, la familia recibe, la tradición vive.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('lang-en');
+      document.body.classList.toggle('lang-es');
+      document.querySelectorAll('[data-es]').forEach(el => {
+        const isEn = document.body.classList.contains('lang-en');
+        el.textContent = isEn ? el.dataset.en : el.dataset.es;
+      });
+    }
+  </script>
+
+</body>
+</html>
