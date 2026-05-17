@@ -125,7 +125,7 @@ nav {
   background-image: url("el-salvador_background.png");
   background-size: cover;
   background-position: center;
-  background-blend-mode: multiply;
+  
   background-color: #8b2500;
   padding: calc(var(--nav-height) + 60px) 48px 80px;
 }
