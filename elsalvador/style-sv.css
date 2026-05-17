@@ -122,15 +122,11 @@ nav {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    #1a0a05 0%,
-    #2d1505 20%,
-    #8b2500 45%,
-    #c44a00 65%,
-    #e87a00 80%,
-    #f5a623 100%
-  );
+  background-image: url("el-salvador_background.png");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-color: #8b2500;
   padding: calc(var(--nav-height) + 60px) 48px 80px;
 }
 

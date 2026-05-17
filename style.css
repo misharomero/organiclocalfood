@@ -124,24 +124,23 @@ nav {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: linear-gradient(
-    180deg,
-    #1a2818 0%,
-    #243320 25%,
-    #2d4028 50%,
-    #1e2d1c 75%,
-    #141f12 100%
-  );
-  padding: calc(var(--nav-height) + 60px) 48px 80px;
+  padding: calc(var(--nav-height) + 60px) 48px 80px;  
+  background-image: url("tahoma_background.png");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-color: #1a2818;
 }
 
 .hero-mist {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(200,216,224,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 60%, rgba(138,171,110,0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 40%, rgba(100,150,140,0.08) 0%, transparent 40%);
+  background-image: url("tahoma_background.png");
+background-size: cover;
+background-position: center;
+background-blend-mode: multiply;
+background-color: #1a2818;
 }
 
 .mountain-silhouette {
