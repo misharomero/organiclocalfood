@@ -65,33 +65,44 @@
   <span class="section-tag">WSU Master Gardener Sale · May 2026</span>
   <h2>The Tomato Starts</h2>
   <p class="gallery-caption">Specialty tomato starts purchased at the Washington State University Extension Master Gardener Plant Sale, Puyallup Valley.</p>
+    <section class="photo-gallery">
+  <span class="section-tag">WSU Master Gardener Sale · May 2026</span>
+  <h2>The Tomato Starts</h2>
+  <p class="gallery-caption">Specialty tomato starts purchased at the Washington State University Extension Master Gardener Plant Sale, Puyallup Valley.</p>
   <div class="gallery-grid">
-    <img src="images/IMG_5093.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5094.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5095.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5098.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5099.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5100.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5101.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5102.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5103.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5108.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5109.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5110.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5111.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5112.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5113.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5114.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5115.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5116.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5118.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5119.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5120.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
-    <img src="images/IMG_5121.jpeg" alt="Tomato starts at WSU Master Gardener Sale">
+    <img src="images/IMG_5093.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5094.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5095.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5098.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5099.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5100.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5101.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5102.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5103.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5108.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5109.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5110.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5111.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5112.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5113.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5114.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5115.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5116.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5118.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5119.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5120.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
+    <img src="images/IMG_5121.jpeg" alt="Tomato starts" onclick="openLightbox(this.src)">
   </div>
 </section>
 
-  </div>
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Full size">
+  <span id="lightbox-close">✕</span>
+</div>
+  </section>
+
+    </div>
 
   <footer>
     <div class="footer-inner">
@@ -111,6 +122,17 @@
       });
     }
   </script>
-
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
