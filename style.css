@@ -128,19 +128,8 @@ nav {
   background-image: url("tahoma_background.png");
   background-size: cover;
   background-position: center;
-  background-blend-mode: multiply;
+  
   background-color: #1a2818;
-}
-
-.hero-mist {
-  position: absolute;
-  inset: 0;
-  background:
-  background-image: url("tahoma_background.png");
-background-size: cover;
-background-position: center;
-background-blend-mode: multiply;
-background-color: #1a2818;
 }
 
 .mountain-silhouette {
