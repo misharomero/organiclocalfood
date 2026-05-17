@@ -681,3 +681,44 @@ footer {
 #lightbox-close:hover { opacity: 1; }
 
 .gallery-grid img { cursor: zoom-in; }
+.event-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin: 28px 0 40px;
+}
+
+.event-block {
+  background: var(--parchment);
+  padding: 24px;
+  border-top: 3px solid var(--fern);
+}
+
+.event-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--fern);
+  margin-bottom: 12px;
+}
+
+.event-block p {
+  font-size: 0.95rem;
+  color: var(--bark);
+}
+
+.event-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.event-block ul li {
+  font-size: 0.95rem;
+  color: var(--bark);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--fog);
+}
+
+.event-block ul li:last-child { border-bottom: none; }
