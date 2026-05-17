@@ -5,80 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Journal / Diario — Organic Local Food</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="lang-en">
 
   <nav>
-    <a href="index.html" class="nav-logo">🌱 organiclocalfood.org</a>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">⟡</span>
+      <span>Organic Local Food</span>
+    </a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="journal.html" class="active">Journal</a>
-      <a href="tacoma.html">Tacoma</a>
-      <a href="elsalvador.html">El Salvador</a>
+      <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+      <a href="journal.html" class="active" data-en="Journal" data-es="Diario">Journal</a>
+      <a href="valley.html" data-en="The Valley" data-es="El Valle">The Valley</a>
+      <a href="elsalvador.html" data-en="El Salvador" data-es="El Salvador">El Salvador</a>
     </div>
+    <button class="lang-toggle" onclick="toggleLang()">
+      <span class="lang-en-label">EN → ES</span>
+      <span class="lang-es-label">ES → EN</span>
+    </button>
   </nav>
 
   <div class="page-header">
-    <span class="section-tag">Growing Log / Diario de Cultivo</span>
-    <h1>Journal</h1>
-    <p>Weekly notes from both farms · Notas semanales de ambas fincas</p>
+    <span class="section-tag" data-en="Growing Log · Puyallup Valley" data-es="Diario de Cultivo · Valle de Puyallup">Growing Log · Puyallup Valley</span>
+    <h1 data-en="Journal" data-es="Diario">Journal</h1>
+    <p data-en="Weekly notes from the valley · Notas semanales del valle" data-es="Notas semanales del valle · Weekly notes from the valley">Weekly notes from the valley · Notas semanales del valle</p>
   </div>
 
   <div class="journal-entries">
 
-    <!-- ENTRY: May 13, 2026 -->
     <article class="journal-full-entry">
-      <div class="entry-header">
-        <span class="entry-date">May 13, 2026</span>
-        <h2>Tomato Week</h2>
-      </div>
+      <span class="entry-date">May 13, 2026</span>
+      <h2 data-en="Tomato Week — The Hardening Begins" data-es="Semana del Tomate — Comienza el Endurecimiento">Tomato Week — The Hardening Begins</h2>
 
-      <div class="bilingual-block">
-        <div class="lang-block en">
+      <div class="bilingual-grid">
+        <div class="lang-col en">
           <h4>English</h4>
-          <div class="summary-section">
-            <strong>Weekly Summary</strong>
-            <p>This week focused heavily on tomato planting and establishment, with 4 tomato-related entries logged. Seedlings were planted on two separate occasions and watered once early in the week. By mid-week, tomato plants were positioned in the driveway for hardening off before final planting.</p>
-          </div>
-          <div class="summary-section">
-            <strong>Category Patterns</strong>
-            <p>Tomatoes dominated activity this week (4 entries), with planting tasks appearing twice and seedlings mentioned twice. Watering was minimal (1 entry), suggesting either adequate rainfall or focus on other priorities.</p>
-          </div>
-          <div class="summary-section">
-            <strong>Next Tasks</strong>
-            <p>Continue watering tomato plants regularly as they establish. Monitor hardening-off plants in the driveway for sun exposure and weather. Prepare final planting location once hardening period is complete.</p>
-          </div>
+          <span class="summary-label">Weekly Summary</span>
+          <p>This week focused heavily on tomato planting and establishment, with 4 tomato-related entries logged. Seedlings planted on two separate occasions and watered once early in the week. By mid-week, specialty tomato plants were positioned in the driveway — hardening off under the Puyallup sky before their final home in the ground.</p>
+          <span class="summary-label">Category Patterns</span>
+          <p>Tomatoes dominated all activity (4 entries). Planting appeared twice, seedlings twice. Minimal watering — either the valley rain did its work, or focus was elsewhere. A concentrated, intentional week.</p>
+          <span class="summary-label">Next Tasks</span>
+          <p>Continue watering as plants establish. Monitor hardening progress. Prepare final bed locations. Check remaining seedlings not yet planted.</p>
         </div>
 
-        <div class="lang-block es">
+        <div class="lang-col es">
           <h4>Español</h4>
-          <div class="summary-section">
-            <strong>Resumen Semanal</strong>
-            <p>Esta semana se centró intensamente en la siembra y establecimiento de tomates, con 4 entradas registradas. Se sembraron plántulas en dos ocasiones separadas y se regaron una vez a principios de semana. A mediados de semana, las plantas se colocaron en la entrada para endurecerse antes de la siembra final.</p>
-          </div>
-          <div class="summary-section">
-            <strong>Patrones de Categorías</strong>
-            <p>Los tomates dominaron la actividad esta semana (4 entradas), con tareas de siembra apareciendo dos veces. El riego fue mínimo (1 entrada), lo que sugiere lluvia adecuada o enfoque en otras prioridades.</p>
-          </div>
-          <div class="summary-section">
-            <strong>Próximas Tareas</strong>
-            <p>Continuar regando las plantas de tomate regularmente. Monitorear las plantas en endurecimiento para exposición al sol y clima. Preparar la ubicación final una vez que se complete el período de endurecimiento.</p>
-          </div>
+          <span class="summary-label">Resumen Semanal</span>
+          <p>Esta semana se centró intensamente en la siembra y establecimiento de tomates, con 4 entradas registradas. Se sembraron plántulas en dos ocasiones y se regaron una vez. A mediados de semana, las plantas de tomate especiales se colocaron en la entrada — endureciéndose bajo el cielo de Puyallup antes de su hogar final en la tierra.</p>
+          <span class="summary-label">Patrones de Categorías</span>
+          <p>Los tomates dominaron toda la actividad (4 entradas). La siembra apareció dos veces, las plántulas dos veces. Riego mínimo — o la lluvia del valle hizo su trabajo, o el enfoque estuvo en otra parte.</p>
+          <span class="summary-label">Próximas Tareas</span>
+          <p>Continuar regando mientras las plantas se establecen. Monitorear el progreso del endurecimiento. Preparar las ubicaciones finales. Revisar las plántulas restantes.</p>
         </div>
       </div>
     </article>
 
-    <!-- Future entries will be added here by Cosecha -->
-
   </div>
 
   <footer>
-    <p>organiclocalfood.org</p>
-    <p>Tacoma, WA &amp; El Salvador</p>
-    <p class="footer-tagline">Growing with intention · Cultivando con propósito</p>
+    <div class="footer-inner">
+      <p class="footer-name">organiclocalfood.org</p>
+      <p class="footer-place" data-en="Puyallup Valley, Washington · On Puyallup Land" data-es="Valle de Puyallup, Washington · En tierras Puyallup">Puyallup Valley, Washington · On Puyallup Land</p>
+      <p class="footer-tagline" data-en="Growing with intention · Cultivando con propósito" data-es="Cultivando con propósito · Growing with intention">Growing with intention · Cultivando con propósito</p>
+    </div>
   </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('lang-es');
+      document.body.classList.toggle('lang-en');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const isEs = document.body.classList.contains('lang-es');
+        el.textContent = isEs ? el.dataset.es : el.dataset.en;
+      });
+    }
+  </script>
 
 </body>
 </html>

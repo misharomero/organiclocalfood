@@ -3,82 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Organic Local Food — Tacoma & El Salvador</title>
+  <title>Organic Local Food — Puyallup Valley</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="lang-en">
 
   <nav>
-    <a href="index.html" class="nav-logo">🌱 organiclocalfood.org</a>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">⟡</span>
+      <span>Organic Local Food</span>
+    </a>
     <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="journal.html">Journal</a>
-      <a href="tacoma.html">Tacoma</a>
-      <a href="elsalvador.html">El Salvador</a>
+      <a href="index.html" class="active" data-en="Home" data-es="Inicio">Home</a>
+      <a href="journal.html" data-en="Journal" data-es="Diario">Journal</a>
+      <a href="valley.html" data-en="The Valley" data-es="El Valle">The Valley</a>
+      <a href="elsalvador.html" data-en="El Salvador" data-es="El Salvador">El Salvador</a>
     </div>
+    <button class="lang-toggle" onclick="toggleLang()">
+      <span class="lang-en-label">EN → ES</span>
+      <span class="lang-es-label">ES → EN</span>
+    </button>
   </nav>
 
   <section class="hero">
-    <div class="hero-texture"></div>
+    <div class="hero-mist"></div>
+    <div class="mountain-silhouette"></div>
     <div class="hero-content">
-      <p class="hero-label">Tacoma, WA · El Salvador</p>
-      <h1>Growing Food<br><em>with Intention</em></h1>
-      <p class="hero-sub">Cultivando con Propósito</p>
-      <div class="hero-divider"></div>
-      <p class="hero-desc">From a backyard garden in the Pacific Northwest to a family farm in El Salvador — two places, one family, one commitment to the land.</p>
-      <p class="hero-desc-es">De un jardín en el noroeste del Pacífico a una finca familiar en El Salvador — dos lugares, una familia, un compromiso con la tierra.</p>
-      <a href="journal.html" class="hero-cta">Read the Journal →</a>
+      <p class="hero-eyebrow">
+        <span data-en="Puyallup Valley · Washington" data-es="Valle de Puyallup · Washington">Puyallup Valley · Washington</span>
+      </p>
+      <h1>
+        <span class="hero-title-en">Where Tahoma<br><em>Watches Over</em></span>
+        <span class="hero-title-es">Donde Tahoma<br><em>Nos Cuida</em></span>
+      </h1>
+      <p class="hero-nation">
+        <span data-en="On the ancestral lands of the Puyallup people" data-es="En las tierras ancestrales del pueblo Puyallup">On the ancestral lands of the Puyallup people</span>
+      </p>
+      <div class="hero-divider">
+        <span class="salmon-icon">🐟</span>
+      </div>
+      <p class="hero-desc" data-en="Growing food in the shadow of the great mountain. Rich volcanic soil, ancient salmon runs, and the wisdom of those who have tended this valley for thousands of years." data-es="Cultivando alimentos a la sombra de la gran montaña. Tierra volcánica rica, antiguas corridas de salmón, y la sabiduría de quienes han cuidado este valle por miles de años.">
+        Growing food in the shadow of the great mountain. Rich volcanic soil, ancient salmon runs, and the wisdom of those who have tended this valley for thousands of years.
+      </p>
+      <a href="journal.html" class="hero-cta">
+        <span data-en="Read the Growing Journal →" data-es="Leer el Diario →">Read the Growing Journal →</span>
+      </a>
     </div>
-    <div class="hero-scroll">↓</div>
+  </section>
+
+  <section class="land-acknowledgment">
+    <div class="acknowledgment-inner">
+      <span class="section-tag" data-en="Land Acknowledgment" data-es="Reconocimiento de Tierra">Land Acknowledgment</span>
+      <p data-en="We grow on the ancestral homelands of the Puyallup Tribe, whose name for this place — Spuyaləpabš — means 'the generous people.' The Puyallup people have cared for this valley, its salmon, its prairies, and its waters since time immemorial. We grow here with gratitude and respect." data-es="Cultivamos en las tierras ancestrales de la Tribu Puyallup, cuyo nombre para este lugar — Spuyaləpabš — significa 'el pueblo generoso.' El pueblo Puyallup ha cuidado este valle, su salmón, sus praderas y sus aguas desde tiempos inmemoriales. Cultivamos aquí con gratitud y respeto.">
+        We grow on the ancestral homelands of the Puyallup Tribe, whose name for this place — Spuyaləpabš — means "the generous people." The Puyallup people have cared for this valley, its salmon, its prairies, and its waters since time immemorial. We grow here with gratitude and respect.
+      </p>
+    </div>
   </section>
 
   <section class="about">
     <div class="about-grid">
       <div class="about-text">
-        <span class="section-tag">About / Sobre Nosotros</span>
-        <h2>Two Farms,<br>One Story</h2>
-        <p>We are a family rooted in two places. In Tacoma, we grow vegetables, herbs, and fruit in the Pacific Northwest rain and sun. In El Salvador, we tend a farm that has fed our family for generations.</p>
-        <p>This site is where we share what we're learning — about soil, seasons, seeds, and the joy of growing your own food.</p>
-        <p class="es">Somos una familia con raíces en dos lugares. Este sitio es donde compartimos lo que aprendemos — sobre la tierra, las estaciones, las semillas, y la alegría de cultivar tus propios alimentos.</p>
+        <span class="section-tag" data-en="The Valley / El Valle" data-es="El Valle">The Valley / El Valle</span>
+        <h2>
+          <span data-en="Volcanic soil.<br>Glacier water.<br>First Nation wisdom." data-es="Tierra volcánica.<br>Agua glaciar.<br>Sabiduría ancestral.">Volcanic soil.<br>Glacier water.<br>First Nation wisdom.</span>
+        </h2>
+        <p data-en="The Puyallup Valley is one of the most fertile places on earth. Fed by glacial meltwater from Tahoma (Mt. Rainier), rich with centuries of volcanic ash, this land has sustained life — human, salmon, bear, and cedar — for thousands of years." data-es="El Valle de Puyallup es uno de los lugares más fértiles de la tierra. Alimentado por el deshielo glaciar de Tahoma (Monte Rainier), rico en cenizas volcánicas, esta tierra ha sostenido vida durante miles de años.">
+          The Puyallup Valley is one of the most fertile places on earth. Fed by glacial meltwater from Tahoma (Mt. Rainier), rich with centuries of volcanic ash, this land has sustained life — human, salmon, bear, and cedar — for thousands of years.
+        </p>
+        <p data-en="We grow here with intention — specialty tomatoes this season, learning the rhythms of this particular piece of ground, season by season." data-es="Cultivamos aquí con intención — tomates especiales esta temporada, aprendiendo los ritmos de esta tierra en particular, temporada por temporada.">
+          We grow here with intention — specialty tomatoes this season, learning the rhythms of this particular piece of ground, season by season.
+        </p>
       </div>
-      <div class="about-visual">
-        <div class="about-card tacoma">
-          <span class="card-icon">🌧️</span>
-          <h3>Tacoma Garden</h3>
-          <p>Pacific Northwest · Zone 8b</p>
-          <a href="tacoma.html">Explore →</a>
+      <div class="about-cards">
+        <div class="valley-card">
+          <div class="card-glyph">🏔️</div>
+          <h3 data-en="Tahoma" data-es="Tahoma">Tahoma</h3>
+          <p data-en="Mt. Rainier watches over this valley. Its glaciers feed our rivers and soil." data-es="El Monte Rainier cuida este valle. Sus glaciares alimentan nuestros ríos y suelo.">Mt. Rainier watches over this valley. Its glaciers feed our rivers and soil.</p>
         </div>
-        <div class="about-card elsalvador">
-          <span class="card-icon">☀️</span>
-          <h3>El Salvador Farm</h3>
-          <p>Tropical · Family Land</p>
-          <a href="elsalvador.html">Explore →</a>
+        <div class="valley-card">
+          <div class="card-glyph">🐟</div>
+          <h3 data-en="Salmon Nation" data-es="Nación del Salmón">Salmon Nation</h3>
+          <p data-en="The Puyallup River once ran so thick with salmon you could walk across their backs. We grow in their memory." data-es="El río Puyallup corría tan lleno de salmón que podías cruzar sobre sus lomos. Cultivamos en su memoria.">The Puyallup River once ran so thick with salmon you could walk across their backs. We grow in their memory.</p>
+        </div>
+        <div class="valley-card">
+          <div class="card-glyph">🌱</div>
+          <h3 data-en="First Harvest" data-es="Primera Cosecha">First Harvest</h3>
+          <p data-en="Specialty tomatoes, started from seed. This is where it begins." data-es="Tomates especiales, iniciados desde semilla. Aquí comienza todo.">Specialty tomatoes, started from seed. This is where it begins.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="latest">
-    <span class="section-tag">Latest / Último</span>
-    <h2>From the Journal</h2>
-    <div class="journal-preview">
-      <div class="journal-entry">
+  <section class="journal-preview">
+    <div class="journal-inner">
+      <span class="section-tag" data-en="Latest from the Journal" data-es="Último del Diario">Latest from the Journal</span>
+      <div class="journal-entry-preview">
         <span class="entry-date">May 13, 2026</span>
-        <h3>Tomato Week</h3>
-        <p>This week focused heavily on tomato planting and establishment. Seedlings planted on two separate occasions, now hardening off in the driveway before final placement.</p>
-        <p class="es">Esta semana se centró en la siembra y establecimiento de tomates. Plántulas sembradas en dos ocasiones, ahora endureciéndose antes de la siembra final.</p>
-        <a href="journal.html" class="read-more">Read full entry →</a>
+        <h2 data-en="Tomato Week — The Hardening Begins" data-es="Semana del Tomate — Comienza el Endurecimiento">Tomato Week — The Hardening Begins</h2>
+        <p data-en="Four entries this week, all tomatoes. The specialty varieties are out of the house and learning the Puyallup sky — positioned in the driveway, hardening off before their final home in the ground." data-es="Cuatro entradas esta semana, todos tomates. Las variedades especiales están fuera de la casa y conociendo el cielo de Puyallup — posicionadas en la entrada, endureciéndose antes de su hogar final en la tierra.">
+          Four entries this week, all tomatoes. The specialty varieties are out of the house and learning the Puyallup sky — positioned in the driveway, hardening off before their final home in the ground.
+        </p>
+        <a href="journal.html" class="read-more" data-en="Full entry + AI farm summary →" data-es="Entrada completa + resumen de IA →">Full entry + AI farm summary →</a>
       </div>
+    </div>
+  </section>
+
+  <section class="connection">
+    <div class="connection-inner">
+      <span class="section-tag" data-en="Two Farms, One Family" data-es="Dos Fincas, Una Familia">Two Farms, One Family</span>
+      <p data-en="This valley is one half of the story. The other half is a family farm in El Salvador — tropical, ancient, and full of life. Two places, growing together." data-es="Este valle es la mitad de la historia. La otra mitad es una finca familiar en El Salvador — tropical, antigua y llena de vida. Dos lugares, creciendo juntos.">
+        This valley is one half of the story. The other half is a family farm in El Salvador — tropical, ancient, and full of life. Two places, growing together.
+      </p>
+      <a href="elsalvador.html" class="connection-link" data-en="Visit the El Salvador farm →" data-es="Visitar la finca en El Salvador →">Visit the El Salvador farm →</a>
     </div>
   </section>
 
   <footer>
-    <p>organiclocalfood.org</p>
-    <p>Tacoma, WA &amp; El Salvador</p>
-    <p class="footer-tagline">Growing with intention · Cultivando con propósito</p>
+    <div class="footer-inner">
+      <p class="footer-name">organiclocalfood.org</p>
+      <p class="footer-place" data-en="Puyallup Valley, Washington · On Puyallup Land" data-es="Valle de Puyallup, Washington · En tierras Puyallup">Puyallup Valley, Washington · On Puyallup Land</p>
+      <p class="footer-tagline" data-en="Growing with intention · Cultivando con propósito" data-es="Cultivando con propósito · Growing with intention">Growing with intention · Cultivando con propósito</p>
+    </div>
   </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('lang-es');
+      document.body.classList.toggle('lang-en');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const isEs = document.body.classList.contains('lang-es');
+        el.textContent = isEs ? el.dataset.es : el.dataset.en;
+      });
+    }
+  </script>
 
 </body>
 </html>
