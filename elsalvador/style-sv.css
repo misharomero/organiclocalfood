@@ -688,7 +688,10 @@ footer {
 #lightbox-img {
   max-width: 90vw;
   max-height: 90vh;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  box-shadow: 0 0 60px rgba(0,0,0,0.5);
 }
 
 #lightbox-close {
