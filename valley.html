@@ -1,4 +1,33 @@
-<div class="page-header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Valley — Local Organic Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-en">
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">⟡</span>
+      <span>Local Organic Food</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+      <a href="journal.html" data-en="Journal" data-es="Diario">Journal</a>
+      <a href="valley.html" class="active" data-en="The Valley" data-es="El Valle">The Valley</a>
+      <a href="elsalvador/" data-en="El Salvador" data-es="El Salvador">El Salvador</a>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()">
+      <span class="lang-en-label">EN → ES</span>
+      <span class="lang-es-label">ES → EN</span>
+    </button>
+  </nav>
+
+  <div class="page-header">
     <span class="section-tag">Puyallup Valley · Washington</span>
     <h1>The Valley</h1>
     <p>A place of ancient generosity · Un lugar de antigua generosidad</p>
@@ -25,7 +54,7 @@
     <div class="valley-intro" style="margin-top: 60px;">
       <span class="section-tag">Today / Hoy</span>
       <h2>Growing Forward</h2>
-      <p>Over 70% of Pierce County's farmland has been lost since 1950 to housing developments and commercial growth. Organizations like PCC Farmland Trust are working to conserve what remains — including farms in the Puyallup Valley — because this land is irreplaceable.</p>
+      <p>Over 70% of Pierce County's farmland has been lost since 1950 to housing developments and commercial growth. Organizations like PCC Farmland Trust are working to conserve what remains — because this land is irreplaceable.</p>
       <p>We grow here with full awareness of that history — the generosity of the Puyallup people, the fertility of volcanic soil, the work of generations of farmers, and the urgent need to keep growing food on land that was made for it. Every tomato planted is a small act of continuity.</p>
     </div>
 
@@ -38,7 +67,7 @@
       <div class="crop-card">
         <div class="crop-icon">🐟</div>
         <h3>Salmon</h3>
-        <p>The Puyallup River once ran thick with salmon — the foundation of Puyallup culture and cuisine for thousands of years. Tribal fishing rights remain central to the Puyallup Tribe today.</p>
+        <p>The Puyallup River once ran thick with salmon — the foundation of Puyallup culture for thousands of years. Tribal fishing rights remain central to the Puyallup Tribe today.</p>
       </div>
       <div class="crop-card">
         <div class="crop-icon">🍓</div>
@@ -48,7 +77,7 @@
       <div class="crop-card">
         <div class="crop-icon">🌷</div>
         <h3>Bulbs & Flowers</h3>
-        <p>Daffodils, tulips, dahlias — the valley's flower farms are celebrated each spring with the Daffodil Festival, one of the largest floral parades in the nation.</p>
+        <p>Daffodils, tulips, dahlias — celebrated each spring with the Daffodil Festival, one of the largest floral parades in the nation.</p>
       </div>
       <div class="crop-card">
         <div class="crop-icon">🍅</div>
@@ -63,3 +92,25 @@
     </div>
 
   </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">localorganicfood.org</p>
+      <p class="footer-place" data-en="Puyallup Valley, Washington · On Puyallup Land" data-es="Valle de Puyallup, Washington · En tierras Puyallup">Puyallup Valley, Washington · On Puyallup Land</p>
+      <p class="footer-tagline">Growing with intention · Cultivando con propósito</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('lang-es');
+      document.body.classList.toggle('lang-en');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const isEs = document.body.classList.contains('lang-es');
+        el.textContent = isEs ? el.dataset.es : el.dataset.en;
+      });
+    }
+  </script>
+
+</body>
+</html>
