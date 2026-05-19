@@ -98,6 +98,8 @@
 <div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img" src="" alt="Full size">
   <span id="lightbox-close">✕</span>
+  <span id="lightbox-prev" onclick="event.stopPropagation(); changeImage(-1)">&#8592;</span>
+  <span id="lightbox-next" onclick="event.stopPropagation(); changeImage(1)">&#8594;</span>
 </div>
   </section>
 
@@ -153,26 +155,35 @@
     </div>
   </footer>
 
-  <script>
-    function toggleLang() {
-      document.body.classList.toggle('lang-en');
-      document.body.classList.toggle('lang-es');
-      document.querySelectorAll('[data-es]').forEach(el => {
-        const isEn = document.body.classList.contains('lang-en');
-        el.textContent = isEn ? el.dataset.en : el.dataset.es;
-      });
-    }
-  </script>
-<script>
+ <script>
+  const images = [
+    'images/el-salvador_051726-1.jpeg',
+    'images/el-salvador_051726-2.jpeg',
+    'images/el-salvador_051726-3.jpeg',
+    'images/el-salvador_051726-4.jpeg',
+    'images/el-salvador_051726-5.jpeg'
+  ];
+  let currentIndex = 0;
+
   function openLightbox(src) {
+    currentIndex = images.indexOf(src);
     document.getElementById('lightbox-img').src = src;
     document.getElementById('lightbox').classList.add('active');
   }
+
+  function changeImage(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+  }
+
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
   }
+
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') changeImage(1);
+    if (e.key === 'ArrowLeft') changeImage(-1);
   });
 </script>
 </body>
