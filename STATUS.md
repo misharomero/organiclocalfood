@@ -1,0 +1,16 @@
+# Cosecha Status
+
+## Infrastructure
+...
+
+## Website
+...
+
+## Lessons Learned
+...
+
+## Current Philosophy
+...
+
+## Milestones
+...

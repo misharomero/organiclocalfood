@@ -80,6 +80,25 @@
         </div>
       </div>
     </div>
+    <section class="galeria">
+  <div class="galeria-inner">
+    <span class="section-tag" data-es="La Finca en Imágenes" data-en="The Farm in Photos">La Finca en Imágenes</span>
+    <h2 data-es="Fotos de la Finca" data-en="Farm Photos">Fotos de la Finca</h2>
+    <div class="galeria-grid">
+      <img src="images/el-salvador_051726-1.jpeg" alt="Finca familiar El Salvador" onclick="openLightbox(this.src)">
+      <img src="images/el-salvador_051726-2.jpeg" alt="Finca familiar El Salvador" onclick="openLightbox(this.src)">
+      <img src="images/el-salvador_051726-3.jpeg" alt="Finca familiar El Salvador" onclick="openLightbox(this.src)">
+      <img src="images/el-salvador_051726-4.jpeg" alt="Finca familiar El Salvador" onclick="openLightbox(this.src)">
+      <img src="images/el-salvador_051726-5.jpeg" alt="Finca familiar El Salvador" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Full size">
+  <span id="lightbox-close">✕</span>
+</div>
   </section>
 
   <section class="cultivos">
@@ -144,6 +163,17 @@
       });
     }
   </script>
-
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
