@@ -723,3 +723,22 @@ footer {
 }
 
 .event-block ul li:last-child { border-bottom: none; }
+#lightbox-prev,
+#lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 20px;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+
+#lightbox-prev { left: 20px; }
+#lightbox-next { right: 20px; }
+
+#lightbox-prev:hover,
+#lightbox-next:hover { opacity: 1; }
