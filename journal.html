@@ -180,6 +180,8 @@
 <div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img" src="" alt="Full size">
   <span id="lightbox-close">✕</span>
+  <span id="lightbox-prev" onclick="event.stopPropagation(); changeImage(-1)">&#8592;</span>
+  <span id="lightbox-next" onclick="event.stopPropagation(); changeImage(1)">&#8594;</span>
 </div>
   </section>
 
@@ -204,15 +206,51 @@
     }
   </script>
 <script>
+  const images = [
+    'images/IMG_5098.jpeg',
+    'images/IMG_5093.jpeg',
+    'images/IMG_5094.jpeg',
+    'images/IMG_5095.jpeg',
+    'images/IMG_5099.jpeg',
+    'images/IMG_5100.jpeg',
+    'images/IMG_5101.jpeg',
+    'images/IMG_5102.jpeg',
+    'images/IMG_5103.jpeg',
+    'images/IMG_5108.jpeg',
+    'images/IMG_5109.jpeg',
+    'images/IMG_5110.jpeg',
+    'images/IMG_5111.jpeg',
+    'images/IMG_5112.jpeg',
+    'images/IMG_5113.jpeg',
+    'images/IMG_5114.jpeg',
+    'images/IMG_5115.jpeg',
+    'images/IMG_5116.jpeg',
+    'images/IMG_5118.jpeg',
+    'images/IMG_5119.jpeg',
+    'images/IMG_5120.jpeg',
+    'images/IMG_5121.jpeg'
+  ];
+  let currentIndex = 0;
+
   function openLightbox(src) {
+    currentIndex = images.indexOf(src);
     document.getElementById('lightbox-img').src = src;
     document.getElementById('lightbox').classList.add('active');
   }
+
+  function changeImage(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex];
+  }
+
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
   }
+
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') changeImage(1);
+    if (e.key === 'ArrowLeft') changeImage(-1);
   });
 </script>
 </body>
