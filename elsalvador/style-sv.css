@@ -685,13 +685,16 @@ footer {
   display: flex;
 }
 
-#lightbox-img {
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  box-shadow: 0 0 60px rgba(0,0,0,0.5);
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  padding: 40px;
 }
 
 #lightbox-close {
