@@ -185,6 +185,14 @@
     if (e.key === 'ArrowRight') changeImage(1);
     if (e.key === 'ArrowLeft') changeImage(-1);
   });
+  function toggleLang() {
+    document.body.classList.toggle('lang-en');
+    document.body.classList.toggle('lang-es');
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const isEn = document.body.classList.contains('lang-en');
+      el.textContent = isEn ? el.dataset.en : el.dataset.es;
+    });
+  }
 </script>
 </body>
 </html>
