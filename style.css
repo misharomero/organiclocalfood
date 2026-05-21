@@ -742,3 +742,20 @@ footer {
 
 #lightbox-prev:hover,
 #lightbox-next:hover { opacity: 1; }
+
+/* Make homepage journal preview link visibly and reliably clickable */
+.journal-preview .read-more {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  margin-top: 18px;
+  color: var(--fern);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.journal-preview .read-more:hover {
+  text-decoration-thickness: 2px;
+}
