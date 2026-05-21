@@ -780,3 +780,131 @@ footer {
   color: #fff8dc;
   text-decoration: underline;
 }
+
+/* --- Homepage improvements: Current Season + Start Here --- */
+.current-season,
+.start-here,
+.photo-story-note,
+.about-project-page {
+  padding: 80px 24px;
+}
+
+.current-season {
+  background: rgba(246, 241, 226, 0.92);
+}
+
+.current-season-inner,
+.start-here-inner,
+.photo-story-note,
+.about-project-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.current-season h2,
+.start-here h2,
+.photo-story-note h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 16px 0;
+}
+
+.current-season p,
+.photo-story-note p {
+  max-width: 780px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.start-here {
+  background: linear-gradient(135deg, rgba(39, 68, 45, 0.96), rgba(20, 42, 30, 0.98));
+  color: #f7f0d8;
+}
+
+.start-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.start-card {
+  display: block;
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.10);
+  color: #f7f0d8;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.start-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.start-icon {
+  font-size: 2rem;
+}
+
+.start-card h3 {
+  margin: 14px 0 10px;
+  font-size: 1.35rem;
+}
+
+.start-card p {
+  line-height: 1.65;
+}
+
+.photo-story-note {
+  background: rgba(246, 241, 226, 0.92);
+  border-radius: 28px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.galeria-caption {
+  max-width: 760px;
+  margin: 14px auto 28px;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.about-project-card {
+  background: rgba(246, 241, 226, 0.94);
+  border-radius: 28px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+}
+
+.about-project-card h2,
+.about-project-card h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.about-project-card p {
+  line-height: 1.8;
+}
+
+.about-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+@media (max-width: 850px) {
+  .start-card-grid,
+  .about-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .current-season,
+  .start-here,
+  .photo-story-note,
+  .about-project-page {
+    padding: 56px 18px;
+  }
+}

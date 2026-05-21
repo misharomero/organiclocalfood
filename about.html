@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Local Organic Food</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-en">
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">⟡</span>
+      <span>Local Organic Food</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-en="Home" data-es="Inicio">Home</a>
+      <a href="journal.html" data-en="Journal" data-es="Diario">Journal</a>
+      <a href="valley.html" data-en="The Valley" data-es="El Valle">The Valley</a>
+      <a href="about.html" class="active" data-en="About" data-es="Acerca de">About</a>
+      <a href="elsalvador/" data-en="El Salvador" data-es="El Salvador">El Salvador</a>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()">
+      <span class="lang-en-label">EN → ES</span>
+      <span class="lang-es-label">ES → EN</span>
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <span class="section-tag" data-en="About the Project" data-es="Acerca del Proyecto">About the Project</span>
+    <h1 data-en="Local Organic Food" data-es="Comida Orgánica Local">Local Organic Food</h1>
+    <p data-en="A family food project connecting the Puyallup Valley and El Salvador." data-es="Un proyecto familiar de alimentos que conecta el Valle de Puyallup y El Salvador.">
+      A family food project connecting the Puyallup Valley and El Salvador.
+    </p>
+  </div>
+
+  <main class="about-project-page">
+    <section class="about-project-card">
+      <span class="section-tag" data-en="The idea" data-es="La idea">The idea</span>
+      <h2 data-en="Two places, one growing story." data-es="Dos lugares, una historia de cultivo.">Two places, one growing story.</h2>
+      <p data-en="Local Organic Food documents a small growing project in the Puyallup Valley and a family finca in El Salvador. It is part garden journal, part family archive, part food-security experiment, and part love letter to land." data-es="Comida Orgánica Local documenta un pequeño proyecto de cultivo en el Valle de Puyallup y una finca familiar en El Salvador. Es parte diario de jardín, parte archivo familiar, parte experimento de seguridad alimentaria y parte carta de amor a la tierra.">
+        Local Organic Food documents a small growing project in the Puyallup Valley and a family finca in El Salvador. It is part garden journal, part family archive, part food-security experiment, and part love letter to land.
+      </p>
+    </section>
+
+    <section class="about-project-grid">
+      <div class="about-project-card">
+        <h3 data-en="Puyallup Valley" data-es="Valle de Puyallup">Puyallup Valley</h3>
+        <p data-en="The Washington garden grows under Tahoma, on Puyallup land, with volcanic soil, rain, cool seasons, and careful attention to what this place can teach." data-es="El jardín de Washington crece bajo Tahoma, en tierra Puyallup, con tierra volcánica, lluvia, temporadas frescas y atención cuidadosa a lo que este lugar puede enseñar.">
+          The Washington garden grows under Tahoma, on Puyallup land, with volcanic soil, rain, cool seasons, and careful attention to what this place can teach.
+        </p>
+      </div>
+      <div class="about-project-card">
+        <h3 data-en="El Salvador" data-es="El Salvador">El Salvador</h3>
+        <p data-en="The family finca carries tropical abundance, memory, crops, music, and generational knowledge. It is the other half of the story." data-es="La finca familiar lleva abundancia tropical, memoria, cultivos, música y conocimiento generacional. Es la otra mitad de la historia.">
+          The family finca carries tropical abundance, memory, crops, music, and generational knowledge. It is the other half of the story.
+        </p>
+      </div>
+      <div class="about-project-card">
+        <h3 data-en="The Journal" data-es="El Diario">The Journal</h3>
+        <p data-en="The journal records weekly farm activity, seasonal observations, lessons learned, and the practical work of growing food with intention." data-es="El diario registra la actividad semanal de la finca, observaciones de temporada, lecciones aprendidas y el trabajo práctico de cultivar con propósito.">
+          The journal records weekly farm activity, seasonal observations, lessons learned, and the practical work of growing food with intention.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">localorganicfood.org</p>
+      <p class="footer-place" data-en="Puyallup Valley, Washington · El Salvador" data-es="Valle de Puyallup, Washington · El Salvador">Puyallup Valley, Washington · El Salvador</p>
+      <p class="footer-tagline" data-en="Growing with intention · Cultivando con propósito" data-es="Cultivando con propósito · Growing with intention">Growing with intention · Cultivando con propósito</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleLang() {
+      document.body.classList.toggle('lang-es');
+      document.body.classList.toggle('lang-en');
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const isEs = document.body.classList.contains('lang-es');
+        el.textContent = isEs ? el.dataset.es : el.dataset.en;
+      });
+    }
+  </script>
+
+</body>
+</html>
