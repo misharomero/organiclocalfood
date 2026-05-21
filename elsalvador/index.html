@@ -242,7 +242,7 @@ const images = [
     document.body.classList.toggle('lang-es');
     document.querySelectorAll('[data-es]').forEach(el => {
       const isEn = document.body.classList.contains('lang-en');
-      el.textContent = isEn ? el.dataset.en : el.dataset.es;
+      el.innerHTML = isEn ? el.dataset.en : el.dataset.es;
     });
   }
 </script>
