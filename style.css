@@ -759,3 +759,24 @@ footer {
 .journal-preview .read-more:hover {
   text-decoration-thickness: 2px;
 }
+/* Homepage journal preview link button */
+.journal-preview .read-more {
+  display: inline-block;
+  position: relative;
+  z-index: 20;
+  margin-top: 18px;
+  color: #f7f0d8;
+  background: rgba(47, 78, 47, 0.92);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.journal-preview .read-more:hover {
+  background: rgba(31, 54, 31, 1);
+  color: #fff8dc;
+  text-decoration: underline;
+}
