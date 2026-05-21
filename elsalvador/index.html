@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style-sv.css">
+  <link rel="canonical" href="https://www.localorganicfood.org/elsalvador/">
 </head>
 <body class="lang-es">
 
@@ -18,7 +19,7 @@
     <div class="nav-links">
       <a href="/elsalvador/" class="active" data-es="Inicio" data-en="Home">Inicio</a>
       <a href="/journal.html" data-es="Diario" data-en="Journal">Diario</a>
-      <a href="/elsalvador/" data-es="La Finca" data-en="The Farm">La Finca</a>
+      <a href="#finca" data-es="La Finca" data-en="The Farm">La Finca</a>
       <a href="/" data-es="Puyallup" data-en="Puyallup">Puyallup</a>
     </div>
     <button class="lang-toggle" onclick="toggleLang()">
@@ -42,13 +43,13 @@
       <div class="hero-icons">
         <span>🌽</span><span>☀️</span><span>🌺</span><span>🥭</span><span>🎶</span>
       </div>
-      <a href="/journal.html" class="hero-cta">
-        <span data-es="Ver el Diario →" data-en="See the Journal →">Ver el Diario →</span>
+      <a href="#galeria" class="hero-cta">
+        <span data-es="Ver la Galería →" data-en="See the Gallery →">Ver la Galería →</span>
       </a>
     </div>
   </section>
 
-  <section class="vida">
+  <section class="vida" id="finca">
     <div class="vida-inner">
       <div class="vida-text">
         <span class="section-tag" data-es="La Finca / The Farm" data-en="The Farm / La Finca">La Finca / The Farm</span>
@@ -82,10 +83,11 @@
         </div>
       </div>
     </div>
-    <section class="galeria">
+    <section class="galeria" id="galeria">
   <div class="galeria-inner">
     <span class="section-tag" data-es="La Finca en Imágenes" data-en="The Farm in Photos">La Finca en Imágenes</span>
     <h2 data-es="Fotos de la Finca" data-en="Farm Photos">Fotos de la Finca</h2>
+    <p class="gallery-caption" data-es="Una mirada a la tierra, la familia, el trabajo y la vida diaria de la finca." data-en="A look at the land, family, work, and daily life of the farm.">Una mirada a la tierra, la familia, el trabajo y la vida diaria de la finca.</p>
 <div class="galeria-grid">
       <img src="images/el-salvador_051726-1.jpeg" alt="Finca familiar El Salvador" onclick="openLightbox(this.src)">
       <img src="images/el-salvador_051726-2.jpeg" alt="Finca familiar El Salvador" onclick="openLightbox(this.src)">
