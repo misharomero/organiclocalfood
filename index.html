@@ -174,7 +174,7 @@
       document.body.classList.toggle('lang-en');
       document.querySelectorAll('[data-en]').forEach(el => {
         const isEs = document.body.classList.contains('lang-es');
-        el.textContent = isEs ? el.dataset.es : el.dataset.en;
+        el.innerHTML = isEs ? el.dataset.es : el.dataset.en;
       });
     }
   </script>
