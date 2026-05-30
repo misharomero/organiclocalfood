@@ -173,6 +173,84 @@
     }
   }
 
+
+  /* Sitewide image lightbox */
+  .site-image-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    background: rgba(10, 12, 10, 0.94);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .site-image-lightbox.active {
+    display: flex;
+  }
+
+  .site-image-lightbox img {
+    max-width: 92vw;
+    max-height: 86vh;
+    border-radius: 18px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  }
+
+  .site-lightbox-close,
+  .site-lightbox-prev,
+  .site-lightbox-next {
+    position: fixed;
+    border: none;
+    background: rgba(255, 250, 240, 0.94);
+    color: #203222;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 999px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+  }
+
+  .site-lightbox-close {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .site-lightbox-prev {
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .site-lightbox-next {
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  body img:not(#siteLightboxImg) {
+    cursor: zoom-in;
+  }
+
+  @media (max-width: 700px) {
+    .site-image-lightbox {
+      padding: 1rem;
+    }
+
+    .site-lightbox-close,
+    .site-lightbox-prev,
+    .site-lightbox-next {
+      width: 2.6rem;
+      height: 2.6rem;
+      font-size: 1.6rem;
+    }
+  }
+
 </style>
 </head>
 <body class="lang-es elsalvador-page">
@@ -645,6 +723,111 @@ const images = [
     });
 
     document.addEventListener('DOMContentLoaded', setupUniversalLightbox);
+  </script>
+
+
+  <div class="site-image-lightbox" id="siteImageLightbox" aria-hidden="true">
+    <button class="site-lightbox-close" type="button" aria-label="Close image" onclick="closeSiteImageLightbox()">×</button>
+    <button class="site-lightbox-prev" type="button" aria-label="Previous image" onclick="changeSiteImageLightbox(-1)">‹</button>
+    <img id="siteLightboxImg" src="" alt="">
+    <button class="site-lightbox-next" type="button" aria-label="Next image" onclick="changeSiteImageLightbox(1)">›</button>
+  </div>
+
+  <script>
+    let siteLightboxImages = [];
+    let siteLightboxIndex = 0;
+
+    function collectSiteImages() {
+      siteLightboxImages = Array.from(document.querySelectorAll('img'))
+        .filter(img => img.id !== 'siteLightboxImg')
+        .filter(img => !img.closest('.site-image-lightbox'))
+        .filter(img => img.getAttribute('src'));
+    }
+
+    function openSiteImageLightbox(index) {
+      collectSiteImages();
+
+      if (!siteLightboxImages.length) return;
+
+      siteLightboxIndex = index;
+      const selected = siteLightboxImages[siteLightboxIndex];
+      const lightbox = document.getElementById('siteImageLightbox');
+      const lightboxImg = document.getElementById('siteLightboxImg');
+
+      if (!selected || !lightbox || !lightboxImg) return;
+
+      lightboxImg.src = selected.currentSrc || selected.src;
+      lightboxImg.alt = selected.alt || '';
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeSiteImageLightbox() {
+      const lightbox = document.getElementById('siteImageLightbox');
+      if (!lightbox) return;
+
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    function changeSiteImageLightbox(direction) {
+      collectSiteImages();
+
+      if (!siteLightboxImages.length) return;
+
+      siteLightboxIndex =
+        (siteLightboxIndex + direction + siteLightboxImages.length) %
+        siteLightboxImages.length;
+
+      const selected = siteLightboxImages[siteLightboxIndex];
+      const lightboxImg = document.getElementById('siteLightboxImg');
+
+      if (!selected || !lightboxImg) return;
+
+      lightboxImg.src = selected.currentSrc || selected.src;
+      lightboxImg.alt = selected.alt || '';
+    }
+
+    function setupSiteImageLightbox() {
+      collectSiteImages();
+
+      document.addEventListener('click', event => {
+        const img = event.target.closest('img');
+
+        if (!img) return;
+        if (img.id === 'siteLightboxImg') return;
+        if (img.closest('.site-image-lightbox')) return;
+
+        collectSiteImages();
+        const index = siteLightboxImages.indexOf(img);
+
+        if (index === -1) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+
+        openSiteImageLightbox(index);
+      }, true);
+
+      const lightbox = document.getElementById('siteImageLightbox');
+      if (lightbox) {
+        lightbox.addEventListener('click', event => {
+          if (event.target === lightbox) closeSiteImageLightbox();
+        });
+      }
+    }
+
+    document.addEventListener('keydown', event => {
+      const lightbox = document.getElementById('siteImageLightbox');
+      if (!lightbox || !lightbox.classList.contains('active')) return;
+
+      if (event.key === 'Escape') closeSiteImageLightbox();
+      if (event.key === 'ArrowLeft') changeSiteImageLightbox(-1);
+      if (event.key === 'ArrowRight') changeSiteImageLightbox(1);
+    });
+
+    document.addEventListener('DOMContentLoaded', setupSiteImageLightbox);
   </script>
 
 </body>
