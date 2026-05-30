@@ -7,6 +7,132 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+<style>
+
+  .home-photo-strip {
+    padding: 3rem 1.5rem;
+    background: rgba(255, 248, 230, 0.72);
+  }
+
+  .home-photo-strip-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .home-photo-strip h2 {
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .home-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .home-photo-grid figure {
+    margin: 0;
+  }
+
+  .home-photo-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 16px 35px rgba(40, 30, 20, 0.18);
+  }
+
+  @media (max-width: 800px) {
+    .home-photo-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-photo-grid img {
+      height: 180px;
+    }
+  }
+
+
+  /* Universal Puyallup lightbox */
+  .puyallup-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(10, 18, 12, 0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .puyallup-lightbox.active {
+    display: flex;
+  }
+
+  .puyallup-lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .puyallup-lightbox-close,
+  .puyallup-lightbox-prev,
+  .puyallup-lightbox-next {
+    position: fixed;
+    border: none;
+    background: rgba(245, 248, 238, 0.94);
+    color: #1f3324;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 999px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .puyallup-lightbox-close {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .puyallup-lightbox-prev {
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .puyallup-lightbox-next {
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .gallery-grid img,
+  .home-photo-grid img,
+  .photo-grid img,
+  .valley-gallery img,
+  .journal-gallery img {
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    .puyallup-lightbox {
+      padding: 1rem;
+    }
+
+    .puyallup-lightbox-prev,
+    .puyallup-lightbox-next,
+    .puyallup-lightbox-close {
+      width: 2.6rem;
+      height: 2.6rem;
+      font-size: 1.6rem;
+    }
+  }
+
+</style>
 </head>
 <body class="lang-en">
 
@@ -53,6 +179,27 @@
     </div>
   </section>
 
+
+  <section class="home-photo-strip">
+    <div class="home-photo-strip-inner">
+      <span class="section-tag" data-en="From the Garden" data-es="Desde el jardín">From the Garden</span>
+      <h2 data-en="Real food, real places, real seasons." data-es="Comida real, lugares reales, temporadas reales.">Real food, real places, real seasons.</h2>
+      <div class="home-photo-grid">
+        <figure>
+          <img src="images/IMG_5109.jpeg" alt="Local Organic Food project photo 1" data-en="Local Organic Food project photo 1" data-es="Foto del proyecto Local Organic Food 1">
+        </figure>
+        <figure>
+          <img src="images/IMG_5110.jpeg" alt="Local Organic Food project photo 2" data-en="Local Organic Food project photo 2" data-es="Foto del proyecto Local Organic Food 2">
+        </figure>
+        <figure>
+          <img src="images/IMG_5111.jpeg" alt="Local Organic Food project photo 3" data-en="Local Organic Food project photo 3" data-es="Foto del proyecto Local Organic Food 3">
+        </figure>
+        <figure>
+          <img src="images/IMG_5112.jpeg" alt="Local Organic Food project photo 4" data-en="Local Organic Food project photo 4" data-es="Foto del proyecto Local Organic Food 4">
+        </figure>
+      </div>
+    </div>
+  </section>
   <section class="land-acknowledgment">
     <div class="acknowledgment-inner">
       <span class="section-tag" data-en="Land Acknowledgment" data-es="Reconocimiento de Tierra">Land Acknowledgment</span>
@@ -177,6 +324,88 @@
         el.innerHTML = isEs ? el.dataset.es : el.dataset.en;
       });
     }
+  </script>
+
+
+  <div class="puyallup-lightbox" id="puyallupLightbox" aria-hidden="true">
+    <button class="puyallup-lightbox-close" type="button" aria-label="Close image" onclick="closePuyallupLightbox()">×</button>
+    <button class="puyallup-lightbox-prev" type="button" aria-label="Previous image" onclick="changePuyallupLightboxImage(-1)">‹</button>
+    <img id="puyallupLightboxImg" src="" alt="">
+    <button class="puyallup-lightbox-next" type="button" aria-label="Next image" onclick="changePuyallupLightboxImage(1)">›</button>
+  </div>
+
+  <script>
+    let puyallupLightboxImages = [];
+    let puyallupLightboxIndex = 0;
+
+    function setupPuyallupLightbox() {
+      puyallupLightboxImages = Array.from(document.querySelectorAll(
+        '.gallery-grid img, .home-photo-grid img, .photo-grid img, .valley-gallery img, .journal-gallery img'
+      ));
+
+      puyallupLightboxImages.forEach((img, index) => {
+        img.addEventListener('click', event => {
+          event.preventDefault();
+          openPuyallupLightbox(index);
+        });
+
+        const parentLink = img.closest('a');
+        if (parentLink) {
+          parentLink.addEventListener('click', event => {
+            event.preventDefault();
+            openPuyallupLightbox(index);
+          });
+        }
+      });
+    }
+
+    function openPuyallupLightbox(index) {
+      puyallupLightboxIndex = index;
+      const lightbox = document.getElementById('puyallupLightbox');
+      const lightboxImg = document.getElementById('puyallupLightboxImg');
+      const selected = puyallupLightboxImages[puyallupLightboxIndex];
+
+      if (!lightbox || !lightboxImg || !selected) return;
+
+      lightboxImg.src = selected.src;
+      lightboxImg.alt = selected.alt || '';
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closePuyallupLightbox() {
+      const lightbox = document.getElementById('puyallupLightbox');
+      if (!lightbox) return;
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    function changePuyallupLightboxImage(direction) {
+      if (!puyallupLightboxImages.length) return;
+
+      puyallupLightboxIndex =
+        (puyallupLightboxIndex + direction + puyallupLightboxImages.length) %
+        puyallupLightboxImages.length;
+
+      const lightboxImg = document.getElementById('puyallupLightboxImg');
+      const selected = puyallupLightboxImages[puyallupLightboxIndex];
+
+      if (!lightboxImg || !selected) return;
+
+      lightboxImg.src = selected.src;
+      lightboxImg.alt = selected.alt || '';
+    }
+
+    document.addEventListener('keydown', event => {
+      const lightbox = document.getElementById('puyallupLightbox');
+      if (!lightbox || !lightbox.classList.contains('active')) return;
+
+      if (event.key === 'Escape') closePuyallupLightbox();
+      if (event.key === 'ArrowLeft') changePuyallupLightboxImage(-1);
+      if (event.key === 'ArrowRight') changePuyallupLightboxImage(1);
+    });
+
+    document.addEventListener('DOMContentLoaded', setupPuyallupLightbox);
   </script>
 
 </body>

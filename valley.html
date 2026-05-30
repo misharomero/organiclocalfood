@@ -7,6 +7,89 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IM+Fell+English:ital@0;1&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+<style>
+
+  /* Universal Puyallup lightbox */
+  .puyallup-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(10, 18, 12, 0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .puyallup-lightbox.active {
+    display: flex;
+  }
+
+  .puyallup-lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  .puyallup-lightbox-close,
+  .puyallup-lightbox-prev,
+  .puyallup-lightbox-next {
+    position: fixed;
+    border: none;
+    background: rgba(245, 248, 238, 0.94);
+    color: #1f3324;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 999px;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .puyallup-lightbox-close {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .puyallup-lightbox-prev {
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .puyallup-lightbox-next {
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .gallery-grid img,
+  .home-photo-grid img,
+  .photo-grid img,
+  .valley-gallery img,
+  .journal-gallery img {
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    .puyallup-lightbox {
+      padding: 1rem;
+    }
+
+    .puyallup-lightbox-prev,
+    .puyallup-lightbox-next,
+    .puyallup-lightbox-close {
+      width: 2.6rem;
+      height: 2.6rem;
+      font-size: 1.6rem;
+    }
+  }
+
+</style>
 </head>
 <body class="lang-en">
 
@@ -170,6 +253,88 @@
         el.textContent = isEs ? el.dataset.es : el.dataset.en;
       });
     }
+  </script>
+
+
+  <div class="puyallup-lightbox" id="puyallupLightbox" aria-hidden="true">
+    <button class="puyallup-lightbox-close" type="button" aria-label="Close image" onclick="closePuyallupLightbox()">×</button>
+    <button class="puyallup-lightbox-prev" type="button" aria-label="Previous image" onclick="changePuyallupLightboxImage(-1)">‹</button>
+    <img id="puyallupLightboxImg" src="" alt="">
+    <button class="puyallup-lightbox-next" type="button" aria-label="Next image" onclick="changePuyallupLightboxImage(1)">›</button>
+  </div>
+
+  <script>
+    let puyallupLightboxImages = [];
+    let puyallupLightboxIndex = 0;
+
+    function setupPuyallupLightbox() {
+      puyallupLightboxImages = Array.from(document.querySelectorAll(
+        '.gallery-grid img, .home-photo-grid img, .photo-grid img, .valley-gallery img, .journal-gallery img'
+      ));
+
+      puyallupLightboxImages.forEach((img, index) => {
+        img.addEventListener('click', event => {
+          event.preventDefault();
+          openPuyallupLightbox(index);
+        });
+
+        const parentLink = img.closest('a');
+        if (parentLink) {
+          parentLink.addEventListener('click', event => {
+            event.preventDefault();
+            openPuyallupLightbox(index);
+          });
+        }
+      });
+    }
+
+    function openPuyallupLightbox(index) {
+      puyallupLightboxIndex = index;
+      const lightbox = document.getElementById('puyallupLightbox');
+      const lightboxImg = document.getElementById('puyallupLightboxImg');
+      const selected = puyallupLightboxImages[puyallupLightboxIndex];
+
+      if (!lightbox || !lightboxImg || !selected) return;
+
+      lightboxImg.src = selected.src;
+      lightboxImg.alt = selected.alt || '';
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closePuyallupLightbox() {
+      const lightbox = document.getElementById('puyallupLightbox');
+      if (!lightbox) return;
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    function changePuyallupLightboxImage(direction) {
+      if (!puyallupLightboxImages.length) return;
+
+      puyallupLightboxIndex =
+        (puyallupLightboxIndex + direction + puyallupLightboxImages.length) %
+        puyallupLightboxImages.length;
+
+      const lightboxImg = document.getElementById('puyallupLightboxImg');
+      const selected = puyallupLightboxImages[puyallupLightboxIndex];
+
+      if (!lightboxImg || !selected) return;
+
+      lightboxImg.src = selected.src;
+      lightboxImg.alt = selected.alt || '';
+    }
+
+    document.addEventListener('keydown', event => {
+      const lightbox = document.getElementById('puyallupLightbox');
+      if (!lightbox || !lightbox.classList.contains('active')) return;
+
+      if (event.key === 'Escape') closePuyallupLightbox();
+      if (event.key === 'ArrowLeft') changePuyallupLightboxImage(-1);
+      if (event.key === 'ArrowRight') changePuyallupLightboxImage(1);
+    });
+
+    document.addEventListener('DOMContentLoaded', setupPuyallupLightbox);
   </script>
 
 </body>
