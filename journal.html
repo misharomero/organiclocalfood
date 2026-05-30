@@ -89,6 +89,57 @@
     }
   }
 
+
+  .journal-featured-photo-section {
+    padding: 3rem 1.5rem;
+    background: rgba(238, 244, 228, 0.82);
+  }
+
+  .journal-featured-photo-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .journal-featured-photo-section h2 {
+    margin: 0.5rem 0 1rem;
+  }
+
+  .journal-featured-photo-section p {
+    max-width: 850px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .journal-featured-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .journal-featured-photo-grid figure {
+    margin: 0;
+  }
+
+  .journal-featured-photo-grid img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 16px 35px rgba(30, 45, 25, 0.18);
+    cursor: pointer;
+  }
+
+  @media (max-width: 800px) {
+    .journal-featured-photo-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .journal-featured-photo-grid img {
+      height: 185px;
+    }
+  }
+
 </style>
 </head>
 <body class="lang-en">
@@ -117,6 +168,34 @@
     <p data-en="Weekly notes from the valley · Notas semanales del valle" data-es="Notas semanales del valle · Weekly notes from the valley">Weekly notes from the valley · Notas semanales del valle</p>
   </div>
 
+
+  <section class="journal-featured-photo-section">
+    <div class="journal-featured-photo-inner">
+      <span class="section-tag" data-en="Photo Story" data-es="Historia en fotos">Photo Story</span>
+      <h2 data-en="WSU Master Gardener tomato starts" data-es="Plántulas de tomate del programa Master Gardener de WSU">WSU Master Gardener tomato starts</h2>
+      <p data-en="These photos belong near the beginning of the journal because they show where this season’s tomato story started: tables of starts, local growers, practical learning, and the first real push into the growing year." data-es="Estas fotos pertenecen al inicio del diario porque muestran dónde comenzó la historia de los tomates de esta temporada: mesas de plántulas, productores locales, aprendizaje práctico y el primer impulso real del año de cultivo.">These photos belong near the beginning of the journal because they show where this season’s tomato story started: tables of starts, local growers, practical learning, and the first real push into the growing year.</p>
+      <div class="journal-featured-photo-grid gallery-grid">
+        <figure>
+          <img src="images/IMG_5093.jpeg" alt="WSU Master Gardener tomato sale photo 1" data-en="WSU Master Gardener tomato sale photo 1" data-es="Foto 1 de la venta de tomates Master Gardener de WSU">
+        </figure>
+        <figure>
+          <img src="images/IMG_5094.jpeg" alt="WSU Master Gardener tomato sale photo 2" data-en="WSU Master Gardener tomato sale photo 2" data-es="Foto 2 de la venta de tomates Master Gardener de WSU">
+        </figure>
+        <figure>
+          <img src="images/IMG_5095.jpeg" alt="WSU Master Gardener tomato sale photo 3" data-en="WSU Master Gardener tomato sale photo 3" data-es="Foto 3 de la venta de tomates Master Gardener de WSU">
+        </figure>
+        <figure>
+          <img src="images/IMG_5098.jpeg" alt="WSU Master Gardener tomato sale photo 4" data-en="WSU Master Gardener tomato sale photo 4" data-es="Foto 4 de la venta de tomates Master Gardener de WSU">
+        </figure>
+        <figure>
+          <img src="images/IMG_5099.jpeg" alt="WSU Master Gardener tomato sale photo 5" data-en="WSU Master Gardener tomato sale photo 5" data-es="Foto 5 de la venta de tomates Master Gardener de WSU">
+        </figure>
+        <figure>
+          <img src="images/IMG_5100.jpeg" alt="WSU Master Gardener tomato sale photo 6" data-en="WSU Master Gardener tomato sale photo 6" data-es="Foto 6 de la venta de tomates Master Gardener de WSU">
+        </figure>
+      </div>
+    </div>
+  </section>
   <main class="journal-entries">
 
     <!-- JOURNAL_ENTRIES_START -->
