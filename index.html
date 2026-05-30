@@ -132,6 +132,86 @@
     }
   }
 
+
+  .home-teaser-section {
+    padding: 3rem 1.5rem;
+    background: rgba(246, 241, 226, 0.92);
+  }
+
+  .home-teaser-inner {
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+
+  .home-teaser-section h2 {
+    margin: 0.5rem 0 1rem;
+  }
+
+  .home-teaser-section > .home-teaser-inner > p {
+    max-width: 850px;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+  }
+
+  .home-teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .home-teaser-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 250, 240, 0.96);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 16px 35px rgba(30, 45, 25, 0.16);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .home-teaser-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 45px rgba(30, 45, 25, 0.22);
+  }
+
+  .home-teaser-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .home-teaser-card-body {
+    padding: 1rem;
+  }
+
+  .home-teaser-card h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  .home-teaser-card p {
+    margin: 0;
+    line-height: 1.55;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 950px) {
+    .home-teaser-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .home-teaser-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .home-teaser-card img {
+      height: 220px;
+    }
+  }
+
 </style>
 </head>
 <body class="lang-en">
@@ -197,6 +277,44 @@
         <figure>
           <img src="images/IMG_5112.jpeg" alt="Local Organic Food project photo 4" data-en="Local Organic Food project photo 4" data-es="Foto del proyecto Local Organic Food 4">
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-teaser-section">
+    <div class="home-teaser-inner">
+      <span class="section-tag" data-en="Explore the Project" data-es="Explora el Proyecto">Explore the Project</span>
+      <h2 data-en="Four ways into the story." data-es="Cuatro caminos para entrar en la historia.">Four ways into the story.</h2>
+      <p data-en="This site connects garden work in the Puyallup Valley with family land, food, and everyday life in El Salvador." data-es="Este sitio conecta el trabajo del jardín en el Valle de Puyallup con la tierra familiar, la comida y la vida diaria en El Salvador.">This site connects garden work in the Puyallup Valley with family land, food, and everyday life in El Salvador.</p>
+      <div class="home-teaser-grid">
+        <a class="home-teaser-card" href="/journal.html">
+          <img src="images/IMG_5120.jpeg" alt="Garden Journal" data-en="Garden Journal" data-es="Diario del Jardín">
+          <div class="home-teaser-card-body">
+            <h3 data-en="Garden Journal" data-es="Diario del Jardín">Garden Journal</h3>
+            <p data-en="Follow the weekly notes: tomatoes, soil, rain, starts, and the practical rhythm of the growing season." data-es="Sigue las notas semanales: tomates, tierra, lluvia, plántulas y el ritmo práctico de la temporada de cultivo.">Follow the weekly notes: tomatoes, soil, rain, starts, and the practical rhythm of the growing season.</p>
+          </div>
+        </a>
+        <a class="home-teaser-card" href="/valley.html">
+          <img src="images/IMG_5121.jpeg" alt="The Puyallup Valley" data-en="The Puyallup Valley" data-es="El Valle de Puyallup">
+          <div class="home-teaser-card-body">
+            <h3 data-en="The Puyallup Valley" data-es="El Valle de Puyallup">The Puyallup Valley</h3>
+            <p data-en="Learn the story of Tahoma, salmon, volcanic soil, local food, and the deeper history of this valley." data-es="Conoce la historia de Tahoma, el salmón, la tierra volcánica, la comida local y la historia profunda de este valle.">Learn the story of Tahoma, salmon, volcanic soil, local food, and the deeper history of this valley.</p>
+          </div>
+        </a>
+        <a class="home-teaser-card" href="/elsalvador/">
+          <img src="elsalvador/images/finca/IMG_5936.jpeg" alt="El Salvador Finca" data-en="El Salvador Finca" data-es="Finca Familiar">
+          <div class="home-teaser-card-body">
+            <h3 data-en="El Salvador Finca" data-es="Finca Familiar">El Salvador Finca</h3>
+            <p data-en="Visit the family farm: land, animals, food, memory, and everyday life around Sensuntepeque." data-es="Visita la finca familiar: tierra, animales, comida, memoria y vida diaria alrededor de Sensuntepeque.">Visit the family farm: land, animals, food, memory, and everyday life around Sensuntepeque.</p>
+          </div>
+        </a>
+        <a class="home-teaser-card" href="/elsalvador/">
+          <img src="elsalvador/images/el-salvador_candy/IMG_6178.jpeg" alt="Food & Culture" data-en="Food & Culture" data-es="Comida y Cultura">
+          <div class="home-teaser-card-body">
+            <h3 data-en="Food & Culture" data-es="Comida y Cultura">Food & Culture</h3>
+            <p data-en="See fruits, vegetables, pupusas, street food, and sweets from Sensuntepeque." data-es="Mira frutas, verduras, pupusas, comida callejera y dulces de Sensuntepeque.">See fruits, vegetables, pupusas, street food, and sweets from Sensuntepeque.</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
