@@ -1,0 +1,14 @@
+
+# Local safety backups created during manual site edits
+*.backup*
+*backup-before*
+*backup_before*
+
+# Review-only generated files
+*.REVIEW.html
+journal.REVIEW_COPY.html
+elsalvador/sensuntepeque-food-galleries.REVIEW.html
+
+# OS/browser metadata
+*.Identifier
+*:Zone.Identifier
