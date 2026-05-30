@@ -973,3 +973,15 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* El Salvador hero background override */
+body.elsalvador-page .hero,
+body.el-salvador-page .hero,
+.elsalvador .hero,
+.el-salvador .hero {
+  background-image:
+    linear-gradient(rgba(45, 25, 10, 0.45), rgba(45, 25, 10, 0.45)),
+    url("elsalvador/images/finca/IMG_5936.jpeg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
