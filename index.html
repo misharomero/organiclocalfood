@@ -712,6 +712,9 @@
         if (img.id === 'siteLightboxImg') return;
         if (img.closest('.site-image-lightbox')) return;
 
+        // Homepage teaser cards should navigate to their pages, not open the lightbox.
+        if (img.closest('.home-teaser-card')) return;
+
         collectSiteImages();
         const index = siteLightboxImages.indexOf(img);
 

@@ -86,6 +86,80 @@
     }
   }
 
+
+  .about-link-section {
+    padding: 4rem 1.5rem;
+    background: rgba(246, 241, 226, 0.92);
+  }
+
+  .about-link-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .about-link-inner h2 {
+    margin: 0.5rem 0 1rem;
+  }
+
+  .about-link-inner > p {
+    max-width: 850px;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+  }
+
+  .about-link-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .about-link-card {
+    display: block;
+    padding: 1.5rem;
+    border-radius: 22px;
+    background: rgba(255, 250, 240, 0.96);
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 16px 35px rgba(30, 45, 25, 0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .about-link-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 45px rgba(30, 45, 25, 0.20);
+  }
+
+  .about-link-card h3 {
+    margin: 0 0 0.75rem;
+  }
+
+  .about-link-card p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 850px) {
+    .about-link-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+  .about-section-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .about-section-link > div {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .about-section-link:hover > div {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 42px rgba(30, 45, 25, 0.18);
+  }
+
 </style>
 </head>
 <body class="lang-en">
@@ -126,28 +200,33 @@
     </section>
 
     <section class="about-project-grid">
-      <div class="about-project-card">
+      <a href="valley.html" class="about-section-link about-section-link-puyallup">
+<div class="about-project-card">
         <h3 data-en="Puyallup Valley" data-es="Valle de Puyallup">Puyallup Valley</h3>
         <p data-en="The Washington garden grows under Tahoma, on Puyallup land, with volcanic soil, rain, cool seasons, and careful attention to what this place can teach." data-es="El jardín de Washington crece bajo Tahoma, en tierra Puyallup, con tierra volcánica, lluvia, temporadas frescas y atención cuidadosa a lo que este lugar puede enseñar.">
           The Washington garden grows under Tahoma, on Puyallup land, with volcanic soil, rain, cool seasons, and careful attention to what this place can teach.
         </p>
       </div>
-      <div class="about-project-card">
+</a>
+      <a href="elsalvador/" class="about-section-link about-section-link-elsalvador">
+<div class="about-project-card">
         <h3 data-en="El Salvador" data-es="El Salvador">El Salvador</h3>
         <p data-en="The family finca carries tropical abundance, memory, crops, music, and generational knowledge. It is the other half of the story." data-es="La finca familiar lleva abundancia tropical, memoria, cultivos, música y conocimiento generacional. Es la otra mitad de la historia.">
           The family finca carries tropical abundance, memory, crops, music, and generational knowledge. It is the other half of the story.
         </p>
       </div>
-      <div class="about-project-card">
+</a>
+      <a href="journal.html" class="about-section-link about-section-link-journal">
+<div class="about-project-card">
         <h3 data-en="The Journal" data-es="El Diario">The Journal</h3>
         <p data-en="The journal records weekly farm activity, seasonal observations, lessons learned, and the practical work of growing food with intention." data-es="El diario registra la actividad semanal de la finca, observaciones de temporada, lecciones aprendidas y el trabajo práctico de cultivar con propósito.">
           The journal records weekly farm activity, seasonal observations, lessons learned, and the practical work of growing food with intention.
         </p>
       </div>
+</a>
     </section>
   </main>
-
-  <footer>
+<footer>
     <div class="footer-inner">
       <p class="footer-name">localorganicfood.org</p>
       <p class="footer-place" data-en="Puyallup Valley, Washington · El Salvador" data-es="Valle de Puyallup, Washington · El Salvador">Puyallup Valley, Washington · El Salvador</p>
